@@ -1,0 +1,37 @@
+{
+  "activity": [
+    { "kg": 70, "kcal": 50 },
+    { "kg": 72, "kcal": 60 },
+    { "kg": 69, "kcal": 70 },
+    { "kg": 62, "kcal": 80 },
+    { "kg": 73, "kcal": 90 },
+    { "kg": 68, "kcal": 100 },
+    { "kg": 70, "kcal": 110 },
+    { "kg": 71, "kcal": 120 },
+    { "kg": 69, "kcal": 130 },
+    { "kg": 70, "kcal": 140 }
+  ],
+  "sessions": [
+    { "day": "L", "duration": 50 },
+    { "day": "M", "duration": 20 },
+    { "day": "M", "duration": 30 },
+    { "day": "J", "duration": 50 },
+    { "day": "V", "duration": 10 },
+    { "day": "S", "duration": 60 },
+    { "day": "D", "duration": 11 }
+  ],
+  "stats": {
+    "intensite": 0.2,
+    "vitesse": 0.3,
+    "force": 0.5,
+    "endurance": 0.1,
+    "energie": 0.5,
+    "cardio": 0.8
+  },
+  "firstname": "mockRose",
+  "score": 0.2,
+  "calories": 120,
+  "proteines": 30,
+  "glucides": 90,
+  "lipides": 20
+}
