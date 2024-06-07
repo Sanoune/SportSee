@@ -63,15 +63,15 @@ function UserDashboard() {
   // Affiche l'état d'erreur
 
   return (
-    <div className="px-8 py-4 flex-1">
+    <div className=" px-16 xl:px-24 py-4 flex-1">
       <div>
         <div>{userData && <Welcome name={userData.firstname || ""} />}</div>
       </div>
       <button onClick={toggleDataMode}>
         {useMockData ? "Utiliser API" : "Utiliser Mock"}
       </button>
-      <div className="flex gap-6 xl:gap-10 mt-14">
-        <div className="flex flex-col flex-1 gap-6 xl:gap-10">
+      <div className="flex gap-6 xl:gap-10 mt-14 ">
+        <div className="flex flex-col flex-1 gap-6 xl:gap-10 max-w-[835px]">
           <div>
             <Activity error={!!activityError} data={activityData} />
           </div>

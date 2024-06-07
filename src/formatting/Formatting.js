@@ -109,7 +109,12 @@ export class DataFormatter {
   normalizeUserData() {
     return {
       firstname: this.rawData.userInfos.firstName || "",
-      score: this.rawData.todayScore || 0,
+      score:
+        this.rawData.todayScore !== undefined
+          ? this.rawData.todayScore
+          : this.rawData.score !== undefined
+          ? this.rawData.score
+          : 0,
       calories: this.rawData.keyData.calorieCount || 0,
       proteines: this.rawData.keyData.proteinCount || 0,
       glucides: this.rawData.keyData.carbohydrateCount || 0,

@@ -42,7 +42,7 @@ export default function Activity({ data, error }) {
       width="100%"
       height="100%"
       aspect={3}
-      className="bg-sportsee-grey p-4 xl:p-6 rounded-md"
+      className="bg-sportsee-grey p-4 xl:p-6 rounded-md "
     >
       <div className="flex justify-between mb-6">
         <div>

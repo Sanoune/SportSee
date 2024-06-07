@@ -46,7 +46,14 @@ export default function Stats({ data, error }) {
       )}
       {!error && (
         // Graphique radar principal
-        <RadarChart cx="50%" cy="50%" outerRadius="60%" data={intensityData}>
+        <RadarChart
+          cx="50%"
+          cy="50%"
+          outerRadius="60%"
+          width="100%"
+          height="100%"
+          data={intensityData}
+        >
           {/* Grille polaire pour les axes radiaux du graphique */}
           <PolarGrid />
           {/* Axe pour les angles du graphique radar */}
