@@ -8,6 +8,13 @@ import {
   XAxis,
 } from "recharts";
 
+/**
+ * Composant de tooltip personnalisé pour afficher la durée de la session.
+ *
+ * @param {Object} props - Les propriétés du composant.
+ * @param {Array} props.payload - Les données de payload pour afficher le tooltip.
+ * @returns {JSX.Element} Le composant CustomTooltip.
+ */
 const CustomTooltip = ({ payload }) => {
   if (payload && payload.length) {
     return (
@@ -21,6 +28,13 @@ CustomTooltip.propTypes = {
   payload: PropTypes.array,
 };
 
+/**
+ * Composant de curseur personnalisé pour indiquer la position du point.
+ *
+ * @param {Object} props - Les propriétés du composant.
+ * @param {Array} props.points - Les points pour afficher le curseur.
+ * @returns {JSX.Element} Le composant CustomCursor.
+ */
 const CustomCursor = ({ points }) => {
   const { x } = points[0];
   const left = x;
@@ -43,8 +57,18 @@ CustomCursor.propTypes = {
   width: PropTypes.number,
 };
 
+/**
+ * Composant de graphique de durée de session.
+ *
+ * @param {Object} props - Les propriétés du composant.
+ * @param {Array} props.data - Les données du graphique.
+ * @param {boolean} props.error - Indique s'il y a eu une erreur lors de la récupération des données.
+ * @returns {JSX.Element} Le composant SessionDuration.
+ */
 const SessionDuration = ({ data, error }) => {
+  // Copie des données du graphique pour éviter les mutations
   const graphData = [...data];
+  // Ajout de données fictives pour améliorer l'apparence du graphique
   if (graphData.length > 0) {
     graphData.unshift({
       day: "",
@@ -66,12 +90,14 @@ const SessionDuration = ({ data, error }) => {
         data={graphData}
         margin={{ top: 20, right: 0, left: 0, bottom: 5 }}
       >
+        {/* Définition du dégradé pour la ligne du graphique */}
         <defs>
           <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="rgba(255, 255, 255, 0)" />
             <stop offset="100%" stopColor="rgba(255, 255, 255, 1)" />
           </linearGradient>
         </defs>
+        {/* Texte d'indication au-dessus du graphique */}
         <text x={10} y={10} fontSize={15}>
           <tspan
             x={20}
@@ -96,11 +122,13 @@ const SessionDuration = ({ data, error }) => {
             sessions
           </tspan>
         </text>
+        {/* Gestion de l'affichage en cas d'erreur */}
         {error && (
           <text x={30} y={70} fontSize={15}>
             Une erreur est survenue
           </text>
         )}
+        {/* Affichage des axes, tooltip et ligne de graphique */}
         {!error && (
           <>
             <XAxis
@@ -126,7 +154,6 @@ const SessionDuration = ({ data, error }) => {
             />
           </>
         )}
-        ;
       </LineChart>
     </ResponsiveContainer>
   );

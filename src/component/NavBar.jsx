@@ -1,6 +1,12 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
+/**
+ * Composant représentant la barre de navigation.
+ * @param {Object} props - Les propriétés du composant.
+ * @param {string} props.logo - L'URL du logo de l'application.
+ * @returns {JSX.Element} Composant NavBar.
+ */
 function NavBar({ logo }) {
   return (
     <>
@@ -23,7 +29,9 @@ function NavBar({ logo }) {
   );
 }
 
+// Définition des types de props
 NavBar.propTypes = {
+  /** L'URL du logo de l'application */
   logo: PropTypes.string.isRequired,
 };
 

@@ -9,6 +9,11 @@ import {
   YAxis,
 } from "recharts";
 
+/**
+ * Composant de tooltip personnalisé pour le graphique d'activité.
+ * @param {object} payload - Données de payload du tooltip.
+ * @returns {JSX.Element} Composant de tooltip personnalisé.
+ */
 const CustomTooltip = ({ payload }) => {
   if (payload && payload.length) {
     return (
@@ -20,9 +25,18 @@ const CustomTooltip = ({ payload }) => {
   }
 };
 
+/**
+ * Composant représentant le graphique d'activité.
+ * @param {object} props - Propriétés du composant.
+ * @param {Array} props.data - Données du graphique.
+ * @param {boolean} props.error - Indicateur d'erreur.
+ * @returns {JSX.Element} Composant du graphique d'activité.
+ */
 export default function Activity({ data, error }) {
+  // Calcul des valeurs minimale et maximale de kg
   const minKg = Math.min(...data.map((item) => item.kg)) - 1;
   const maxKg = Math.max(...data.map((item) => item.kg));
+
   return (
     <ResponsiveContainer
       width="100%"
@@ -92,6 +106,7 @@ export default function Activity({ data, error }) {
   );
 }
 
+// Déclaration des types des props pour la validation
 CustomTooltip.propTypes = {
   payload: PropTypes.array,
 };

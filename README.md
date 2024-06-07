@@ -1,8 +1,26 @@
-# React + Vite
+Application SportSee
+SportSee est une application de suivi de l'activité physique et de la nutrition, permettant aux utilisateurs de visualiser leurs données personnelles, telles que les séances d'entraînement, les calories brûlées, les performances, et plus encore. Pour démarrer :
+Backend : https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard.git
+npm run dev # Démarrer le serveur backend sur le port 3000
+Frontend npm run dev # Démarrer le serveur de développement frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Structure du Projet
+Le projet est structuré de la manière suivante :
+src/ : Répertoire contenant le code source de l'application.
+components/ : Composants réutilisables de l'application.
+context/ : Contexte de données pour la gestion des données partagées.
+hooks/ : Hooks personnalisés pour la récupération des données.
+pages/ : Pages de l'application.
+services/ : Services pour la récupération des données depuis l'API ou des données simulées.
+formatting/ : Utilitaires pour formater les données brutes.
+mocks/ : Données simulées pour le développement et les tests.
+index.js : Point d'entrée de l'application.
+App.js : Configuration du routage et fourniture du contexte de données.
+index.css : Fichier de styles global.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Technologies Utilisées
+React.js : Bibliothèque JavaScript pour la création d'interfaces utilisateur.
+React Router : Bibliothèque de routage pour la navigation dans l'application.
+Axios : Bibliothèque HTTP pour effectuer des requêtes réseau.
+PropTypes : Validation des propriétés des composants.
+JSDoc : Documentation du code source à l'aide de commentaires JSDoc.

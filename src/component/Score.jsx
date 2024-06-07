@@ -1,6 +1,12 @@
 import PropTypes from "prop-types";
 import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
 
+/**
+ * Composant représentant le graphique de score.
+ * @param {Object} props - Les propriétés du composant.
+ * @param {number} props.data - La valeur du score (entre 0 et 1).
+ * @returns {JSX.Element} Composant Score.
+ */
 export default function Score({ data }) {
   // Calculer la valeur pour le reste jusqu'à 100%
   const restValue = 1 - data;
@@ -8,7 +14,7 @@ export default function Score({ data }) {
   // Définir les données du graphique
   const chartData = [
     { name: "Score", value: data },
-    { name: "Rest", value: restValue },
+    { name: "Reste", value: restValue },
   ];
   const score = chartData[0].value * 100;
 
@@ -22,6 +28,7 @@ export default function Score({ data }) {
       className="bg-sportsee-grey rounded-md"
     >
       <PieChart width="auto" height="auto">
+        {/* Cercle central */}
         <circle
           cx={"50%"}
           cy={"50%"}
@@ -29,6 +36,7 @@ export default function Score({ data }) {
           fill="#fff" // Couleur de fond du cercle central
         />
         <g>
+          {/* Texte Score */}
           <text
             x="20%"
             y="10%"
@@ -39,6 +47,7 @@ export default function Score({ data }) {
           >
             Score
           </text>
+          {/* Texte pourcentage */}
           <text x={"50%"} y={"35%"} dy={8} textAnchor="middle">
             <tspan x="50%" dy="1.2em">{`${score} %`}</tspan>
             <tspan x="50%" dy="1.2em" fill="grey" fontSize="12">
@@ -50,6 +59,7 @@ export default function Score({ data }) {
           </text>
         </g>
 
+        {/* Graphique en forme de pie */}
         <Pie
           data={chartData}
           cx={"50%"}
@@ -63,6 +73,7 @@ export default function Score({ data }) {
           fill="#8884d8"
           dataKey="value"
         >
+          {/* Personnalisation des cellules */}
           {chartData.map((entry, index) => (
             <Cell
               key={`cell-${index}`}
@@ -77,6 +88,7 @@ export default function Score({ data }) {
   );
 }
 
+// Définition des types de props
 Score.propTypes = {
   data: PropTypes.number.isRequired,
 };
