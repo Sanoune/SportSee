@@ -13,7 +13,7 @@ const useUserData = (id, useMockData) => {
       setError(null);
       try {
         const data = useMockData
-          ? await getMockUserById()
+          ? getMockUserById()
           : await getUserDataById(id);
         setUserData(data);
       } catch (err) {

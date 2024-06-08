@@ -30,7 +30,7 @@ const useActivityData = (id, useMockData) => {
       setError(null);
       try {
         const data = useMockData
-          ? await getMockActivityData()
+          ? getMockActivityData()
           : await getActivityData(id);
         setActivityData(data);
       } catch (err) {

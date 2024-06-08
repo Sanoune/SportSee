@@ -7,10 +7,11 @@ Pour démarrer :
 ## Backend
 
 - [Lien vers le backend](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard.git)
-- `npm run dev` : Démarrer le serveur backend sur le port 3000
 
 ## Frontend
 
+- Installer Node v18.20.2
+- `npm install` : Installer les dépendances
 - `npm run dev` : Démarrer le serveur de développement frontend
 
 ## Structure du Projet

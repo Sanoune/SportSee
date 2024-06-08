@@ -13,7 +13,7 @@ const useSessionsData = (id, useMockData) => {
       setError(null);
       try {
         const data = useMockData
-          ? await getMockSessionsData()
+          ? getMockSessionsData()
           : await averageSessionsData(id);
         setSessionsData(data);
       } catch (err) {

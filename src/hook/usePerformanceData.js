@@ -13,7 +13,7 @@ const usePerformData = (id, useMockData) => {
       setError(null);
       try {
         const data = useMockData
-          ? await getMockPerformanceData()
+          ? getMockPerformanceData()
           : await getPerformanceData(id);
         setPerformData(data);
       } catch (err) {

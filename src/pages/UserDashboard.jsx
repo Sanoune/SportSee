@@ -63,7 +63,7 @@ function UserDashboard() {
   // Affiche l'état d'erreur
 
   return (
-    <div className=" px-16 xl:px-24 py-4 flex-1">
+    <div className=" px-16 xl:px-24 py-16 flex-1">
       <div>
         <div>{userData && <Welcome name={userData.firstname || ""} />}</div>
       </div>
