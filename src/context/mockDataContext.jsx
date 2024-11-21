@@ -14,8 +14,10 @@ export let useDataContext = () => useContext(DataContext);
 export const DataProvider = ({ children }) => {
   // Initialise useMockData avec la valeur stockée dans localStorage, ou true par défaut
   const [useMockData, setUseMockData] = useState(() => {
-    const storedValue = localStorage.getItem("useMockData");
-    return storedValue !== null ? JSON.parse(storedValue) : true;
+    return true;
+    // const storedValue = localStorage.getItem("useMockData");
+
+    // return storedValue !== null ? JSON.parse(storedValue) : true;
   });
 
   // Effet pour mettre à jour la valeur stockée dans localStorage à chaque changement de useMockData

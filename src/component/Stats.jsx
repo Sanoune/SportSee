@@ -28,8 +28,8 @@ const translations = {
 export default function Stats({ data, error }) {
   // Transformation des données pour les adapter au format attendu par Recharts
   const intensityData = Object.keys(data).map((key) => ({
-    subject: translations[key],
-    A: data[key],
+    nom: translations[key],
+    value: data[key],
   }));
 
   return (
@@ -58,13 +58,13 @@ export default function Stats({ data, error }) {
           <PolarGrid />
           {/* Axe pour les angles du graphique radar */}
           <PolarAngleAxis
-            dataKey="subject"
+            dataKey="nom"
             tick={{ fontSize: 10, fill: "#FFFFFF" }}
           />
           {/* Graphique radar avec les données */}
           <Radar
             name="Intensity"
-            dataKey="A"
+            dataKey="value"
             fill="#FF0101"
             fillOpacity={0.6}
           />

@@ -20,6 +20,7 @@ const useActivityData = (id, useMockData) => {
   // État pour stocker toute erreur survenue lors de la récupération des données
   const [error, setError] = useState(null);
 
+  // useEffect ne peux pas être asychrone. creation function async dedans. 
   useEffect(() => {
     /**
      * Fonction pour récupérer les données d'activité.

@@ -67,12 +67,11 @@ function UserDashboard() {
       <div>
         <div>{userData && <Welcome name={userData.firstname || ""} />}</div>
       </div>
-      <button onClick={toggleDataMode}>
-        {useMockData ? "Utiliser API" : "Utiliser Mock"}
-      </button>
+      <button onClick={toggleDataMode}>{useMockData}</button>
       <div className="flex gap-6 xl:gap-10 mt-14 ">
         <div className="flex flex-col flex-1 gap-6 xl:gap-10 max-w-[835px]">
           <div>
+            {/*transforme string en bool car composant prend bool*/}
             <Activity error={!!activityError} data={activityData} />
           </div>
           <div className="flex gap-6 xl:gap-10">

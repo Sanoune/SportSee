@@ -19,6 +19,7 @@ function App() {
       <DataProvider>
         <Layout>
           <Routes>
+            <Route path="/" element={<UserDashboard />} />
             {/* Route pour afficher le tableau de bord de l'utilisateur */}
             <Route path="/user/:id" element={<UserDashboard />} />
 
