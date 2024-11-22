@@ -63,18 +63,18 @@ function UserDashboard() {
   // Affiche l'état d'erreur
 
   return (
-    <div className=" px-16 xl:px-24 py-16 flex-1">
+    <div className=" px-8 xl:px-24 py-8 flex-1 sm:justify-items-center">
       <div>
         <div>{userData && <Welcome name={userData.firstname || ""} />}</div>
       </div>
       <button onClick={toggleDataMode}>{useMockData}</button>
-      <div className="flex gap-6 xl:gap-10 mt-14 ">
+      <div className="flex sm:flex-row flex-col gap-6 xl:gap-10 mt-14 w-full sm:justify-center ">
         <div className="flex flex-col flex-1 gap-6 xl:gap-10 max-w-[835px]">
           <div>
             {/*transforme string en bool car composant prend bool*/}
             <Activity error={!!activityError} data={activityData} />
           </div>
-          <div className="flex gap-6 xl:gap-10">
+          <div className="flex sm:flex-row flex-col gap-6 xl:gap-10">
             <div className="flex-1">
               <SessionDuration error={!!sessionsError} data={sessionsData} />
             </div>

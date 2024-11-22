@@ -11,8 +11,8 @@ import icon4 from "../assets/icon4.png";
 export default function SideMenu() {
   return (
     <>
-      <div className="flex flex-col bg-black items-center justify-center gap-10 relative">
-        <div className="flex flex-col gap-8 px-4">
+      <div className="flex flex-col sm:bg-black bg-white items-center justify-center gap-10 relative">
+        <div className="flex sm:flex-col flex-row gap-8 px-4">
           {/* Icone de méditation */}
           <div className="w-14">
             <img alt="icon-meditation" src={icon1}></img>
@@ -32,9 +32,9 @@ export default function SideMenu() {
         </div>
 
         {/* Texte de copyright */}
-        <p className="text-white text-xs -rotate-90 text-nowrap absolute bottom-20">
+        {/* <p className="text-white text-xs -rotate-90 text-nowrap absolute bottom-20">
           Copiryght SportSee 2020
-        </p>
+        </p> */}
       </div>
     </>
   );

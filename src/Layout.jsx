@@ -15,7 +15,7 @@ export default function Layout({ children }) {
   return (
     <div className="flex flex-col h-full">
       <NavBar logo={logo} />
-      <div className="flex flex-1">
+      <div className="flex sm:flex-row sm:flex-1  flex-col ">
         <SideMenu />
         <div className="flex flex-1 justify-center overflow-auto">
           {children}
